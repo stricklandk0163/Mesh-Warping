@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ModelAgencyMainWindow</class>
+ <widget class="QMainWindow" name="ModelAgencyMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1116</width>
+    <height>801</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1116</width>
+    <height>801</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Model Agency</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>83</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Mesh Object:</string>
+        </property>
+        <property name="buddy">
+         <cstring>treeView</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTreeView" name="treeView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>322</width>
+          <height>273</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>322</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="appearanceGroupBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>322</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>322</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Appearance</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="materialUseParentCheckBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Use Parent Properties</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Ambient:</string>
+             </property>
+             <property name="buddy">
+              <cstring>ambRSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="ambRSpinBox">
+             <property name="toolTip">
+              <string>Red component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="ambGSpinBox">
+             <property name="toolTip">
+              <string>Green component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="ambBSpinBox">
+             <property name="toolTip">
+              <string>Blue component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Diffuse:</string>
+             </property>
+             <property name="buddy">
+              <cstring>diffRSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="diffRSpinBox">
+             <property name="toolTip">
+              <string>Red component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="diffGSpinBox">
+             <property name="toolTip">
+              <string>Green component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="diffBSpinBox">
+             <property name="toolTip">
+              <string>Blue component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Specualr:</string>
+             </property>
+             <property name="buddy">
+              <cstring>specRSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="specRSpinBox">
+             <property name="toolTip">
+              <string>Red component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="specGSpinBox">
+             <property name="toolTip">
+              <string>Green component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="specBSpinBox">
+             <property name="toolTip">
+              <string>Blue component (0 - 255)</string>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Shininess:</string>
+             </property>
+             <property name="buddy">
+              <cstring>shineSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="shineSpinBox">
+             <property name="maximum">
+              <double>2048.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="transformationGroupBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>322</width>
+          <height>213</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>322</width>
+          <height>213</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Transformation</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="translationLabel">
+             <property name="text">
+              <string>Trans:</string>
+             </property>
+             <property name="buddy">
+              <cstring>translationXSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="translationXSpinBox">
+             <property name="minimum">
+              <double>-999.990000000000009</double>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="translationYSpinBox">
+             <property name="minimum">
+              <double>-999.990000000000009</double>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="translationZSpinBox">
+             <property name="minimum">
+              <double>-999.990000000000009</double>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="1" column="0">
+            <widget class="QLabel" name="rotPivotLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Angles:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="buddy">
+              <cstring>rotationXSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QDoubleSpinBox" name="rotationXSpinBox">
+               <property name="minimum">
+                <double>-999.990000000000009</double>
+               </property>
+               <property name="maximum">
+                <double>999.990000000000009</double>
+               </property>
+               <property name="singleStep">
+                <double>0.010000000000000</double>
+               </property>
+               <property name="value">
+                <double>0.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="rotationYSpinBox">
+               <property name="minimum">
+                <double>-999.990000000000009</double>
+               </property>
+               <property name="maximum">
+                <double>999.990000000000009</double>
+               </property>
+               <property name="singleStep">
+                <double>0.010000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="rotationZSpinBox">
+               <property name="minimum">
+                <double>-999.990000000000009</double>
+               </property>
+               <property name="maximum">
+                <double>999.990000000000009</double>
+               </property>
+               <property name="singleStep">
+                <double>0.010000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="rotationLabel">
+             <property name="text">
+              <string>Rot Center:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QDoubleSpinBox" name="centerRXSpinBox">
+               <property name="minimum">
+                <double>-999.990000000000009</double>
+               </property>
+               <property name="maximum">
+                <double>999.990000000000009</double>
+               </property>
+               <property name="singleStep">
+                <double>0.010000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="centerRYSpinBox">
+               <property name="minimum">
+                <double>-999.990000000000009</double>
+               </property>
+               <property name="maximum">
+                <double>999.990000000000009</double>
+               </property>
+               <property name="singleStep">
+                <double>0.010000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="centerRZSpinBox">
+               <property name="minimum">
+                <double>-999.990000000000009</double>
+               </property>
+               <property name="maximum">
+                <double>999.990000000000009</double>
+               </property>
+               <property name="singleStep">
+                <double>0.010000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="scaleLabel">
+             <property name="text">
+              <string>Scale:</string>
+             </property>
+             <property name="buddy">
+              <cstring>scaleXSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="scaleXSpinBox">
+             <property name="minimum">
+              <double>-999.990000000000009</double>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="scaleYSpinBox">
+             <property name="minimum">
+              <double>-999.990000000000009</double>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="scaleZSpinBox">
+             <property name="minimum">
+              <double>-999.990000000000009</double>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="MeshGLWidget" name="mainGLWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>671</width>
+        <height>681</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1116</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionLoad_Object_from_File"/>
+    <addaction name="actionSave_Object_to_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuMesh">
+    <property name="title">
+     <string>Mesh</string>
+    </property>
+    <addaction name="actionCompute_Per_face_Normals"/>
+    <addaction name="actionSmooth_all_Normals"/>
+    <addaction name="separator"/>
+    <addaction name="actionMake_Cube"/>
+    <addaction name="actionMake_Cylinder"/>
+    <addaction name="actionMake_Sphere"/>
+    <addaction name="separator"/>
+    <addaction name="actionMake_Sculpture"/>
+    <addaction name="actionMake_Humanoid"/>
+    <addaction name="separator"/>
+    <addaction name="actionExtra_Credit_1"/>
+    <addaction name="actionExtra_Credit_2"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionShow_Bounding_Box_and_Axies"/>
+    <addaction name="actionShow_Vertex_Normals"/>
+    <addaction name="separator"/>
+    <addaction name="actionCycle_Wireframe_Mode"/>
+    <addaction name="separator"/>
+    <addaction name="actionNormal_Rendering_Mode"/>
+    <addaction name="actionSolid_Color_Only_no_shade"/>
+    <addaction name="actionVisualize_Normals_as_Color"/>
+    <addaction name="actionVisualize_Texture_Coordinates_as_Color"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuMesh"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Quit the Project</string>
+   </property>
+  </action>
+  <action name="actionLoad_Object_from_File">
+   <property name="text">
+    <string>Load Object from File ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Load a mesh from an OBJ file.</string>
+   </property>
+  </action>
+  <action name="actionSave_Object_to_File">
+   <property name="text">
+    <string>Save Object to File ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save the current mesh object to an OBJ file.</string>
+   </property>
+  </action>
+  <action name="actionMake_Cube">
+   <property name="text">
+    <string>Make Cube</string>
+   </property>
+   <property name="toolTip">
+    <string>Make a cube mesh and add it to the GL Widget</string>
+   </property>
+  </action>
+  <action name="actionMake_Sphere">
+   <property name="text">
+    <string>Make Sphere</string>
+   </property>
+   <property name="toolTip">
+    <string>Make a sphere mesh and add it the GL Widget</string>
+   </property>
+  </action>
+  <action name="actionMake_Cylinder">
+   <property name="text">
+    <string>Make Cylinder</string>
+   </property>
+   <property name="toolTip">
+    <string>Make a cylinder mesh and add it to the GL widget</string>
+   </property>
+  </action>
+  <action name="actionMake_Sculpture">
+   <property name="text">
+    <string>Make Sculpture</string>
+   </property>
+   <property name="toolTip">
+    <string>Make the sculpture mesh and add it to the GL Widget</string>
+   </property>
+  </action>
+  <action name="actionExtra_Credit_1">
+   <property name="text">
+    <string>Extra Credit 1</string>
+   </property>
+   <property name="toolTip">
+    <string>Make the 1st extra credit mesh if it is implemented.</string>
+   </property>
+  </action>
+  <action name="actionExtra_Credit_2">
+   <property name="text">
+    <string>Extra Credit 2</string>
+   </property>
+   <property name="toolTip">
+    <string>Make the 2nd extra credit mesh if it is implemented.</string>
+   </property>
+  </action>
+  <action name="actionMake_Humanoid">
+   <property name="text">
+    <string>Make Humanoid</string>
+   </property>
+   <property name="toolTip">
+    <string>Create the humanoid mesh and add it to the GL Widget.</string>
+   </property>
+  </action>
+  <action name="actionShow_Bounding_Box_and_Axies">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Bounding Box and Axies</string>
+   </property>
+  </action>
+  <action name="actionCycle_Wireframe_Mode">
+   <property name="text">
+    <string>Cycle Wireframe Mode</string>
+   </property>
+  </action>
+  <action name="actionShow_Vertex_Normals">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Vertex Normals</string>
+   </property>
+  </action>
+  <action name="actionNormal_Rendering_Mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Standard Rendering Mode</string>
+   </property>
+  </action>
+  <action name="actionVisualize_Normals_as_Color">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Visualize Normals as Color</string>
+   </property>
+   <property name="toolTip">
+    <string>Visualize Normals as Color</string>
+   </property>
+  </action>
+  <action name="actionSolid_Color_Only_no_shade">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Solid Color Only (no shade)</string>
+   </property>
+  </action>
+  <action name="actionVisualize_Texture_Coordinates_as_Color">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Visualize Texture Coordinates as Color</string>
+   </property>
+  </action>
+  <action name="actionCompute_Per_face_Normals">
+   <property name="text">
+    <string>Compute Per-face Normals</string>
+   </property>
+  </action>
+  <action name="actionSmooth_all_Normals">
+   <property name="text">
+    <string>Smooth all Normals</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MeshGLWidget</class>
+   <extends>QWidget</extends>
+   <header>MeshGLWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>treeView</tabstop>
+  <tabstop>ambRSpinBox</tabstop>
+  <tabstop>ambGSpinBox</tabstop>
+  <tabstop>ambBSpinBox</tabstop>
+  <tabstop>diffRSpinBox</tabstop>
+  <tabstop>diffGSpinBox</tabstop>
+  <tabstop>diffBSpinBox</tabstop>
+  <tabstop>specRSpinBox</tabstop>
+  <tabstop>specGSpinBox</tabstop>
+  <tabstop>specBSpinBox</tabstop>
+  <tabstop>shineSpinBox</tabstop>
+  <tabstop>translationXSpinBox</tabstop>
+  <tabstop>translationYSpinBox</tabstop>
+  <tabstop>translationZSpinBox</tabstop>
+  <tabstop>rotationXSpinBox</tabstop>
+  <tabstop>rotationYSpinBox</tabstop>
+  <tabstop>rotationZSpinBox</tabstop>
+  <tabstop>scaleXSpinBox</tabstop>
+  <tabstop>scaleYSpinBox</tabstop>
+  <tabstop>scaleZSpinBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>translationXSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>604</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>581</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>translationYSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>translationZSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>552</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rotationXSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>686</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>638</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rotationYSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>193</x>
+     <y>683</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>666</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rotationZSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>693</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scaleXSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>740</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>40</x>
+     <y>738</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scaleYSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>187</x>
+     <y>742</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>739</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scaleZSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncTransformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>737</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>738</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ambRSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ambGSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ambBSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>418</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>406</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diffRSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diffGSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diffBSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>488</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>specRSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>515</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>specGSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>314</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>specBSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>278</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shineSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ModelAgencyMainWindow</receiver>
+   <slot>syncMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updateCurrentShape()</slot>
+  <slot>syncMaterials()</slot>
+  <slot>syncTransformation()</slot>
+ </slots>
+</ui>

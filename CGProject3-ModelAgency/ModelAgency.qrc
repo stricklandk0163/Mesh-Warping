@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/ModelAgency">
-        <file alias="Material.frag">shaders/Material.frag</file>
-        <file alias="Material.vert">shaders/Material.vert</file>
-    </qresource>
-</RCC>

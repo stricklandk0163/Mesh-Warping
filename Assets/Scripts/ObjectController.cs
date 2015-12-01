@@ -82,10 +82,22 @@ public class ObjectController : MonoBehaviour {
 		}
 		curMesh.Clear ();
 		curMesh.vertices = vertices;
-		curMesh.normals = meshOne.normals;
-		curMesh.uv = meshOne.uv;
+		RecalculateNormals();
+		curMesh.normals = meshOne.normals; //TODO: change meshOne.normals to a new variable, just like vertices is done
+		RecalculateUVs();
+		curMesh.uv = meshOne.uv; //TODO: change meshOne.uv to a new variable, just like vertices is done
 		curMesh.triangles = meshOne.triangles;
 		curMesh.RecalculateBounds();
 		curMesh.Optimize();
+	}
+
+	void RecalculateNormals()
+	{
+
+	}
+
+	void RecalculateUVs()
+	{
+
 	}
 }

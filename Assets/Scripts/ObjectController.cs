@@ -4,6 +4,7 @@ using System.Collections;
 
 public class ObjectController : MonoBehaviour {
 
+    public VertexSort vertexSort;
 	public Text percentText;
 	public GameObject objectOne;
 	public GameObject objectTwo;
@@ -13,6 +14,7 @@ public class ObjectController : MonoBehaviour {
 	private Mesh meshOne;
 	private Mesh meshTwo;
 	private Mesh curMesh;
+    private Matches[] matches;
 
 	void Start()
 	{
@@ -20,6 +22,7 @@ public class ObjectController : MonoBehaviour {
 		meshTwo = objectTwo.GetComponent<MeshFilter> ().mesh;
 		curMesh = transform.GetComponent<MeshFilter> ().mesh;
 		percentText.text = "Percent Object Two: " + percentObjectTwo;
+        matches = vertexSort.SortVertices(meshOne.vertices, meshTwo.vertices);
 		RecalculateVertices();
 	}
 
@@ -68,36 +71,28 @@ public class ObjectController : MonoBehaviour {
 	void RecalculateVertices()
 	{
 		Vector3[] vertices = new Vector3[curMesh.vertexCount];
-		for(int i = 0; i < curMesh.vertexCount; i++)
+
+        int vertNum = 0;
+		for(int i = 0; i < matches.Length; i++)
 		{
-			float x_one = meshOne.vertices[i].x;
-			float y_one = meshOne.vertices[i].y;
-			float z_one = meshOne.vertices[i].z;
-
-			float x_two = meshTwo.vertices[i].x;
-			float y_two = meshTwo.vertices[i].y;
-			float z_two = meshTwo.vertices[i].z;
-
-			vertices[i] = new Vector3(x_one + ((x_two - x_one) * percentObjectTwo/100), y_one + ((y_two - y_one) * percentObjectTwo/100), z_one + ((z_two - z_one) * percentObjectTwo/100));
+            float x_one = matches[i].parentVert.x;
+			float y_one = matches[i].parentVert.y;
+			float z_one = matches[i].parentVert.z;
+            for(int j = 0; j < matches[i].verts.Count; j++)
+            {
+                float x_two = matches[i].verts[j].x;
+                float y_two = matches[i].verts[j].y;
+                float z_two = matches[i].verts[j].z;
+                vertices[vertNum] = new Vector3(x_one + ((x_two - x_one) * percentObjectTwo / 100), y_one + ((y_two - y_one) * percentObjectTwo / 100), z_one + ((z_two - z_one) * percentObjectTwo / 100));
+                vertNum++;
+            }
 		}
 		curMesh.Clear ();
 		curMesh.vertices = vertices;
-		RecalculateNormals();
-		curMesh.normals = meshOne.normals; //TODO: change meshOne.normals to a new variable, just like vertices is done
-		RecalculateUVs();
-		curMesh.uv = meshOne.uv; //TODO: change meshOne.uv to a new variable, just like vertices is done
-		curMesh.triangles = meshOne.triangles;
+		curMesh.uv = meshTwo.uv; //TODO: change meshOne.uv to a new variable, just like vertices is done
+		curMesh.triangles = meshTwo.triangles;
+        curMesh.RecalculateNormals();
 		curMesh.RecalculateBounds();
 		curMesh.Optimize();
-	}
-
-	void RecalculateNormals()
-	{
-
-	}
-
-	void RecalculateUVs()
-	{
-
 	}
 }

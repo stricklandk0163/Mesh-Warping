@@ -7,6 +7,7 @@ public struct Matches
 {
     public Vector3 parentVert;
     public List<Vector3> verts;
+	public List<int> arrayLocations;
 }
 
 public class VertexSort : MonoBehaviour {
@@ -37,6 +38,7 @@ public class VertexSort : MonoBehaviour {
         {
             matches[i].parentVert = lowVertObject[i];
             matches[i].verts = new List<Vector3>();
+			matches[i].arrayLocations = new List<int>();
         }
 
         //Now we will want a way to compute distances for points in each array this will be accomplished with a 2D array
@@ -72,6 +74,7 @@ public class VertexSort : MonoBehaviour {
             }
             //Store the min value into the matches array
             matches[minLowVertDistIndex].verts.Add(highVertObject[minHighVertDistIndex]);
+			matches[minLowVertDistIndex].arrayLocations.Add(minHighVertDistIndex);
             //Add which vertice got mapped to the 
             highVertMappedIndices.Add(minHighVertDistIndex);
             //Maximize all values in the current lowvertdistindex column and minHighVertDistIndex row so that we don't end up mapping multiple values from the low vert shape into the high vert shape
@@ -112,14 +115,11 @@ public class VertexSort : MonoBehaviour {
                     }
                 }
                 matches[minLowVertIndex].verts.Add(highVertObject[i]);
+				matches[minLowVertIndex].arrayLocations.Add(i);
             }
-             
         }
 
         //We want to insure that every vertice in the lowVert object is mapped to, so we will start out by mapping each lowVert vertice to a single highVert vertice
-
-        //Take in two arrays and find pairs
-        //Return a 2D array that describes which pairs are mathed together
         return matches;
 	}
 

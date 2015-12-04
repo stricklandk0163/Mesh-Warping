@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 
 public class ObjectController : MonoBehaviour {
 
@@ -54,13 +56,13 @@ public class ObjectController : MonoBehaviour {
 		{
 			percentObjectTwo += 0.5f;
 			percentText.text = "Percent Object Two: " + percentObjectTwo;
-			RecalculateVertices();
+			//RecalculateVertices();
 		}
 		if(Input.GetKey(KeyCode.Alpha2))
 		{
 			percentObjectTwo -= 0.5f;
 			percentText.text = "Percent Object Two: " + percentObjectTwo;
-			RecalculateVertices();
+			//RecalculateVertices();
 		}
 		if(Input.GetKey(KeyCode.Space))
 		{
@@ -70,7 +72,9 @@ public class ObjectController : MonoBehaviour {
 
 	void RecalculateVertices()
 	{
-		Vector3[] vertices = new Vector3[curMesh.vertexCount];
+		Mesh largeMesh = (Mathf.Max (meshOne.vertexCount, meshTwo.vertexCount) == meshOne.vertexCount) ? meshOne : meshTwo;
+		Vector3[] vertices = new Vector3[largeMesh.vertexCount];
+		List<int> triangles = new List<int>();
 
         int vertNum = 0;
 		for(int i = 0; i < matches.Length; i++)
@@ -83,16 +87,29 @@ public class ObjectController : MonoBehaviour {
                 float x_two = matches[i].verts[j].x;
                 float y_two = matches[i].verts[j].y;
                 float z_two = matches[i].verts[j].z;
-                vertices[vertNum] = new Vector3(x_one + ((x_two - x_one) * percentObjectTwo / 100), y_one + ((y_two - y_one) * percentObjectTwo / 100), z_one + ((z_two - z_one) * percentObjectTwo / 100));
-                vertNum++;
+                vertices[matches[i].arrayLocations[j]] = new Vector3(x_one + ((x_two - x_one) * percentObjectTwo / 100), y_one + ((y_two - y_one) * percentObjectTwo / 100), z_one + ((z_two - z_one) * percentObjectTwo / 100));
+				vertNum++;
             }
 		}
 		curMesh.Clear ();
 		curMesh.vertices = vertices;
-		curMesh.uv = meshTwo.uv; //TODO: change meshOne.uv to a new variable, just like vertices is done
-		curMesh.triangles = meshTwo.triangles;
+		curMesh.triangles = largeMesh.triangles;
+		RecalculateUVs();
         curMesh.RecalculateNormals();
 		curMesh.RecalculateBounds();
 		curMesh.Optimize();
+		print (largeMesh.vertexCount);
+		print (curMesh.vertexCount);
+		print (largeMesh.triangles.Length);
+		print (curMesh.triangles.Length);
+	}
+
+	void RecalculateUVs()
+	{
+		Vector2[] uvs = new Vector2[curMesh.vertexCount];
+		for (int i=0; i < uvs.Length; i++) {
+			uvs[i] = new Vector2(curMesh.vertices[i].x, curMesh.vertices[i].z);
+		}
+		curMesh.uv = uvs;
 	}
 }

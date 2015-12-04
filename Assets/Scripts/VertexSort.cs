@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public struct Matches
 {
     public Vector3 parentVert;
-    public List<Vector3> verts = new List<Vector3>();
+    public List<Vector3> verts;
     //Vertex One = {1,2,1};  Vertex Two = {1,3,1};
 }
 

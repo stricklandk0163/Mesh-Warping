@@ -16,6 +16,8 @@ public class ObjectController : MonoBehaviour {
 	private Mesh meshOne;
 	private Mesh meshTwo;
 	private Mesh curMesh;
+	private Mesh largeMesh;
+	private Mesh smallMesh;
     private Matches[] matches;
 
 	void Start()
@@ -23,9 +25,17 @@ public class ObjectController : MonoBehaviour {
 		meshOne = objectOne.GetComponent<MeshFilter> ().mesh;
 		meshTwo = objectTwo.GetComponent<MeshFilter> ().mesh;
 		curMesh = transform.GetComponent<MeshFilter> ().mesh;
+
+		largeMesh = (Mathf.Max (meshOne.vertexCount, meshTwo.vertexCount) == meshOne.vertexCount) ? meshOne : meshTwo;
+		smallMesh = (largeMesh == meshOne) ? meshTwo : meshOne;
+		
 		percentText.text = "Percent Object Two: " + percentObjectTwo;
-        matches = vertexSort.SortVertices(meshOne.vertices, meshTwo.vertices);
-		RecalculateVertices();
+		SubdivideMesh ();
+
+		largeMesh = (Mathf.Max (meshOne.vertexCount, meshTwo.vertexCount) == meshOne.vertexCount) ? meshOne : meshTwo;
+		smallMesh = (largeMesh == meshOne) ? meshTwo : meshOne;
+
+        //matches = vertexSort.SortVertices(meshOne.vertices, meshTwo.vertices);
 	}
 
 	// Update is called once per frame
@@ -56,13 +66,11 @@ public class ObjectController : MonoBehaviour {
 		{
 			percentObjectTwo += 0.5f;
 			percentText.text = "Percent Object Two: " + percentObjectTwo;
-			//RecalculateVertices();
 		}
 		if(Input.GetKey(KeyCode.Alpha2))
 		{
 			percentObjectTwo -= 0.5f;
 			percentText.text = "Percent Object Two: " + percentObjectTwo;
-			//RecalculateVertices();
 		}
 		if(Input.GetKey(KeyCode.Space))
 		{
@@ -70,9 +78,23 @@ public class ObjectController : MonoBehaviour {
 		}
 	}
 
+	void SubdivideMesh()
+	{
+		Mesh newMesh = smallMesh;
+		int subdivisions = 0;
+		while (smallMesh.vertexCount*3 < largeMesh.vertexCount)
+		{
+			subdivisions++;
+			MeshHelper.Subdivide (newMesh);
+		}
+		objectOne.GetComponent<MeshFilter>().mesh = (smallMesh == meshOne) ? newMesh : meshOne;
+		objectTwo.GetComponent<MeshFilter>().mesh = (smallMesh == meshTwo) ? newMesh : meshTwo;
+		print (subdivisions);
+		print ("small: " + smallMesh.vertexCount + " large: " + largeMesh.vertexCount + " new: "+newMesh.vertexCount);
+	}
+
 	void RecalculateVertices()
 	{
-		Mesh largeMesh = (Mathf.Max (meshOne.vertexCount, meshTwo.vertexCount) == meshOne.vertexCount) ? meshOne : meshTwo;
 		Vector3[] vertices = new Vector3[largeMesh.vertexCount];
 		List<int> triangles = new List<int>();
 
